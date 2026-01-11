@@ -1,3 +1,4 @@
+import UserProfile from './UserProfile';
 import Header from './Header';
 import Footer from './Footer';
 import MainContent from './MainContent';
@@ -34,6 +35,7 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>

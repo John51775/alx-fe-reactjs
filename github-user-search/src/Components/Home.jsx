@@ -1,9 +1,12 @@
+import Search from "./Search";
+
 function Home() {
 
 
     return(
 <div>
-<h1>welcome to my project</h1>
+<h1>Search GitHub Users</h1>
+<Search />
 </div>
     )
 };

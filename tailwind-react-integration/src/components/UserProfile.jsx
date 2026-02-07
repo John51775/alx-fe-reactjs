@@ -7,13 +7,15 @@ function UserProfile() {
       mx-auto my-20
       rounded-lg shadow-lg
       text-center
+      hover:shadow-xl
     ">
       <img
         src="src/assets/john.jpg"
         alt="User"
         className="
           mx-auto mb-4 rounded-full
-          sm:w-24 sm:h-24 md:w-36 md:h-36
+          sm:w-24 sm:h-24 md:w-36 md:h-36 hover:scale-110
+          transition-transform duration-300 ease-in-out
         "
       />
 
@@ -21,6 +23,7 @@ function UserProfile() {
         font-bold
         text-lg md:text-xl
         mb-2 text-blue-800
+        hover:text-blue-500
       ">
         John Doe
       </h1>

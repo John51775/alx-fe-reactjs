@@ -24,6 +24,7 @@ export default function HomePage() {
         lg:grid-cols-4
         max-w-7xl
         mx-auto
+        grid-cols-1
       ">
         {recipes.map((recipe) => (
           <div

@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import recipesData from "../data.json";
 import sampleImage from "../components/images(1).jpg";
+
 export default function HomePage() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-  setRecipes(recipesData.default || recipesData);
-}, []);
+    setRecipes(recipesData.default || recipesData);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-8">
@@ -58,18 +60,23 @@ export default function HomePage() {
                 {recipe.summary}
               </p>
 
-              {/* Button */}
-              <button className="
-                mt-4
-                bg-blue-500
-                text-white
-                py-2
-                rounded-lg
-                hover:bg-blue-600
-                transition-colors
-              ">
+              {/* Link to Recipe Detail */}
+              <Link
+                to={`/recipe/${recipe.id}`}
+                className="
+                  mt-4
+                  bg-blue-500
+                  text-white
+                  py-2
+                  rounded-lg
+                  hover:bg-blue-600
+                  transition-colors
+                  text-center
+                  block
+                "
+              >
                 View Recipe
-              </button>
+              </Link>
             </div>
           </div>
         ))}

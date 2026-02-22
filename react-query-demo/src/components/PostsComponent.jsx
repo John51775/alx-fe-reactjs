@@ -2,15 +2,23 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-// Function must be named fetchPosts exactly
+// Must be named fetchPosts
 const fetchPosts = async () => {
   const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
   return data;
 };
 
 export default function PostsComponent() {
-  // useQuery with correct variable names
-  const { data, isLoading, isError, error, refetch } = useQuery(['posts'], fetchPosts);
+  const { data, isLoading, isError, error, refetch } = useQuery(
+    ['posts'],
+    fetchPosts,
+    {
+      cacheTime: 300000,              // 5 minutes
+      staleTime: 10000,               // 10 seconds
+      refetchOnWindowFocus: true,     // auto refetch when tab refocuses
+      keepPreviousData: true          // keeps previous data while fetching new
+    }
+  );
 
   if (isLoading) return <p>Loading posts...</p>;
   if (isError) return <p>Error loading posts: {error.message}</p>;

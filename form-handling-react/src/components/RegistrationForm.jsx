@@ -11,21 +11,20 @@ const RegistrationForm = () => {
 
     let validationErrors = {};
 
-    if (!username.trim()) {
+    if (!username) {
       validationErrors.username = "Username is required";
     }
 
-    if (!email.trim()) {
+    if (!email) {
       validationErrors.email = "Email is required";
     }
 
-    if (!password.trim()) {
+    if (!password) {
       validationErrors.password = "Password is required";
     }
 
     setErrors(validationErrors);
 
-    // If no errors, simulate submission
     if (Object.keys(validationErrors).length === 0) {
       console.log("Form Submitted:", {
         username,
@@ -35,7 +34,6 @@ const RegistrationForm = () => {
 
       alert("User registered successfully!");
 
-      // Reset form
       setUsername("");
       setEmail("");
       setPassword("");
@@ -47,7 +45,6 @@ const RegistrationForm = () => {
       <h2>User Registration</h2>
 
       <form onSubmit={handleSubmit}>
-        {/* Username */}
         <div>
           <label>Username</label>
           <br />
@@ -61,7 +58,6 @@ const RegistrationForm = () => {
           )}
         </div>
 
-        {/* Email */}
         <div>
           <label>Email</label>
           <br />
@@ -75,7 +71,6 @@ const RegistrationForm = () => {
           )}
         </div>
 
-        {/* Password */}
         <div>
           <label>Password</label>
           <br />
